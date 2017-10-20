@@ -1,10 +1,5 @@
 package com.company.lesson6;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Создание класса Phone, который содержит переменные number, model и weight.
  * Создание трех экземпляров этого класса. В класс Phone добавлены метод -

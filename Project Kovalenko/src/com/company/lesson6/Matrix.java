@@ -21,17 +21,17 @@ public class Matrix {
 		array = arg;
 	}
 
-	public double[][] mul(double a) {
+	public Matrix mul(double a) {
 		double[][] res = new double[this.lines][this.columns];
 		for (int i = 0; i < this.lines; i++) {
 			for (int j = 0; j < this.columns; j++) {
 				res[i][j] = this.array[i][j] * a;
 			}
 		}
-		return res;
+		return new Matrix(res);
 	}
 
-	public double[][] add(Matrix other) {
+	public Matrix add(Matrix other) {
 		int resLines = this.lines > other.lines ? this.lines : other.lines;
 		int resColumns = this.columns > other.columns ? this.columns : other.columns;
 		double[][] res = new double[resLines][resColumns];
@@ -60,7 +60,7 @@ public class Matrix {
 				}
 			}
 		}
-		return res;
+		return new Matrix(res);
 	}
 
 	public void printmatrix() {
@@ -70,17 +70,17 @@ public class Matrix {
 	}
 
 	public static void main(String[] args) {
+		double d = 6;
 		Matrix m1 = new Matrix(new double[][] { { 1, 3, 0 }, { 9, 0, 1 }, { 2, 4, 7 } });
 		Matrix m2 = new Matrix(new double[][] { { 2, 4 }, { 1, 3 }, { 1, 3 }, { 1, 3 } });
-		double d = 6;
 
 		System.out.println("Первая матрица:");
 		m1.printmatrix();
 		System.out.println("\nВторая матрица:");
 		m2.printmatrix();
 		System.out.println("\nУмножение первой матрицы на число " + d);
-		System.out.println(Arrays.deepToString(m1.mul(d)));
+		m1.mul(d).printmatrix();
 		System.out.println("\nСумма первой и второй матрицы");
-		System.out.println(Arrays.deepToString(m1.add(m2)));
+		m1.add(m2).printmatrix();
 	}
 }
