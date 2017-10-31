@@ -14,11 +14,10 @@ package com.company.lesson8;
  *
  */
 public abstract class Animal {
-	String food;
-	String location;
+	protected String food;
+	private String location;
 
 	public Animal(String food, String location) {
-		super();
 		this.food = food;
 		this.location = location;
 	}
@@ -29,6 +28,10 @@ public abstract class Animal {
 
 	public String getLocation() {
 		return location;
+	}
+
+	public void setFood(String food) {
+		this.food = food;
 	}
 
 	public void setLocation(String location) {

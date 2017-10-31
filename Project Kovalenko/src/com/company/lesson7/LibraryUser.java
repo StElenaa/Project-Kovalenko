@@ -1,8 +1,8 @@
 package com.company.lesson7;
 
 public class LibraryUser {
-	String fullName, libraryCard, faculty, dateOfBirth, phone;
-	Book myBook;
+	private String fullName, libraryCard, faculty, dateOfBirth, phone;
+	private Book myBook;
 
 	public LibraryUser(String fullName, String libraryCard, String faculty, String dateOfBirth, String phone) {
 		super();

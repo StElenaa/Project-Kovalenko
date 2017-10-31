@@ -1,11 +1,19 @@
 package com.company.lesson8;
 
 public class Cat extends Animal {
-	String voice;
+	private String voice;
 
 	public Cat(String food, String location) {
 		super(food, location);
 		voice = "ìÿó";
+	}
+
+	public String getVoice() {
+		return voice;
+	}
+
+	public void setVoice(String voice) {
+		this.voice = voice;
 	}
 
 	@Override

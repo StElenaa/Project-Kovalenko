@@ -1,11 +1,10 @@
 package com.company.lesson7.details;
 
 public class Engine {
-	String company;
-	int power;
+	private String company;
+	private int power;
 
 	public Engine(String company, int power) {
-		super();
 		this.company = company;
 		this.power = power;
 	}
@@ -24,8 +23,5 @@ public class Engine {
 
 	public void setPower(int power) {
 		this.power = power;
-	}
-
-	public static void main(String[] args) {
 	}
 }

@@ -16,8 +16,8 @@ package com.company.lesson7;
  */
 public class Library {
 
-	LibraryUser[] users;
-	Book[] books;
+	private LibraryUser[] users;
+	private Book[] books;
 
 	public Library() {
 	}

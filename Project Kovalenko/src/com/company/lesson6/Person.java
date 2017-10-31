@@ -22,6 +22,22 @@ public class Person {
 	public Person() {
 	}
 
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	void move() {
 		System.out.println("Метод move() \n" + "fullName= " + fullName + "\n" + "age = " + age + "\n");
 	}

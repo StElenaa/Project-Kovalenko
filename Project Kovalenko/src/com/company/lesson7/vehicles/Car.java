@@ -20,17 +20,56 @@ import com.company.lesson7.proffesions.Driver;
  *
  */
 public class Car {
-	String marka, carClass;
-	int weight;
-	Driver driver;
-	Engine engine;
+	private String marka, carClass;
+	private int weight;
+	private Driver driver;
+	private Engine engine;
 
 	public Car(String marka, String carClass, int weight, Driver driver, Engine engine) {
-		super();
 		this.marka = marka;
 		this.carClass = carClass;
 		this.weight = weight;
 		this.driver = driver;
+		this.engine = engine;
+	}
+
+	public String getMarka() {
+		return marka;
+	}
+
+	public void setMarka(String marka) {
+		this.marka = marka;
+	}
+
+	public String getCarClass() {
+		return carClass;
+	}
+
+	public void setCarClass(String carClass) {
+		this.carClass = carClass;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public Driver getDriver() {
+		return driver;
+	}
+
+	public void setDriver(Driver driver) {
+		this.driver = driver;
+	}
+
+	public Engine getEngine() {
+		return engine;
+	}
+
+	public void setEngine(Engine engine) {
 		this.engine = engine;
 	}
 
@@ -64,6 +103,5 @@ public class Car {
 		Engine engine = new Engine("BMW", 200);
 		Car car1 = new Car("BMW7", "Business", 2000, driver, engine);
 		car1.printInfo();
-
 	}
 }

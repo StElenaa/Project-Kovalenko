@@ -1,7 +1,7 @@
 package com.company.lesson7;
 
 public class StudentL7 {
-	String lastName, firstName, group;
+	private String lastName, firstName, group;
 
 	public StudentL7(String lastName, String firstName, String group) {
 		super();
@@ -10,9 +10,33 @@ public class StudentL7 {
 		this.group = group;
 	}
 
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
 	public void studentCard() {
 		System.out.println("Карточка студента: ");
-		System.out.println(lastName + " " + firstName + "; " + "Группа - " +group + "\n");
+		System.out.println(lastName + " " + firstName + "; " + "Группа - " + group + "\n");
 	}
 
 	public static void main(String[] args) {

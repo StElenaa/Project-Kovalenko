@@ -1,7 +1,7 @@
 package com.company.lesson8;
 
 public class CircleL8 extends Shape {
-	int radius;
+	private int radius;
 
 	public CircleL8(String color, int radius) {
 		super(color);
@@ -14,7 +14,26 @@ public class CircleL8 extends Shape {
 		System.out.println("Цвет - " + color);
 	}
 
-	public void equals() {
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + radius;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CircleL8 other = (CircleL8) obj;
+		if (radius != other.radius)
+			return false;
+		return true;
 	}
 
 	public static void main(String[] args) {

@@ -9,17 +9,25 @@ package com.company.lesson7;
  *
  */
 public class AspirantL7 extends StudentL7 {
-	String work;
+	private String work;
 
 	public AspirantL7(String lastName, String firstName, String group, String work) {
 		super(lastName, firstName, group);
 		this.work = work;
 	}
 
+	public String getWork() {
+		return work;
+	}
+
+	public void setWork(String work) {
+		this.work = work;
+	}
+
 	public void aspirantCard() {
 		System.out.println("Карточка аспаранта: ");
-		System.out.println(
-				lastName + " " + firstName + "; " + "Группа - " + group + "\n" + "Научная работа на тему: " + work);
+		System.out.println(getLastName() + " " + getFirstName() + "; " + "Группа - " + getGroup() + "\n"
+				+ "Научная работа на тему: " + work);
 	}
 
 	public static void main(String[] args) {
