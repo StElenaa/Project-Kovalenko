@@ -6,13 +6,21 @@ public enum SizeClothes {
 			return "детский размер";
 		}
 	};
-	int euroSize;
+	private int euroSize;
 
-	private SizeClothes(int euroSize) {
+	SizeClothes(int euroSize) {
 		this.euroSize = euroSize;
 	}
 
 	public String getDescription() {
 		return "взрослый размер";
+	}
+
+	public int getEuroSize() {
+		return euroSize;
+	}
+
+	public void setEuroSize(int euroSize) {
+		this.euroSize = euroSize;
 	}
 }

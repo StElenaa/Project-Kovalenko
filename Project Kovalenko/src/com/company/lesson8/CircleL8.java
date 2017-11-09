@@ -8,10 +8,18 @@ public class CircleL8 extends Shape {
 		this.radius = radius;
 	}
 
+	public int getRadius() {
+		return radius;
+	}
+
+	public void setRadius(int radius) {
+		this.radius = radius;
+	}
+
 	@Override
 	public void draw() {
 		System.out.println("Draw: Фигура - круг; " + "Радиус - " + radius);
-		System.out.println("Цвет - " + color);
+		System.out.println("Цвет - " + getColor());
 	}
 
 	@Override
@@ -34,6 +42,11 @@ public class CircleL8 extends Shape {
 		if (radius != other.radius)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "CircleL8 [radius=" + radius + ", super.toString()=" + super.toString() + "]";
 	}
 
 	public static void main(String[] args) {

@@ -18,4 +18,33 @@ public class Lorry extends Car {
 	public void setCarrying(int carrying) {
 		this.carrying = carrying;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + carrying;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Lorry other = (Lorry) obj;
+		if (carrying != other.carrying)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Lorry [carrying=" + carrying + ", getMarka()=" + getMarka() + ", getCarClass()=" + getCarClass()
+				+ ", getWeight()=" + getWeight() + ", getDriver()=" + getDriver() + ", getEngine()=" + getEngine()
+				+ ", super.toString()=" + super.toString() + "]";
+	}
 }

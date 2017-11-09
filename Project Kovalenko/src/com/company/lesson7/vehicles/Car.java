@@ -1,5 +1,7 @@
 package com.company.lesson7.vehicles;
 
+import javax.xml.stream.events.StartDocument;
+
 import com.company.lesson7.details.Engine;
 import com.company.lesson7.proffesions.Driver;
 
@@ -73,6 +75,58 @@ public class Car {
 		this.engine = engine;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((carClass == null) ? 0 : carClass.hashCode());
+		result = prime * result + ((driver == null) ? 0 : driver.hashCode());
+		result = prime * result + ((engine == null) ? 0 : engine.hashCode());
+		result = prime * result + ((marka == null) ? 0 : marka.hashCode());
+		result = prime * result + weight;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Car other = (Car) obj;
+		if (carClass == null) {
+			if (other.carClass != null)
+				return false;
+		} else if (!carClass.equals(other.carClass))
+			return false;
+		if (driver == null) {
+			if (other.driver != null)
+				return false;
+		} else if (!driver.equals(other.driver))
+			return false;
+		if (engine == null) {
+			if (other.engine != null)
+				return false;
+		} else if (!engine.equals(other.engine))
+			return false;
+		if (marka == null) {
+			if (other.marka != null)
+				return false;
+		} else if (!marka.equals(other.marka))
+			return false;
+		if (weight != other.weight)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Car [marka=" + marka + ", carClass=" + carClass + ", weight=" + weight + ", driver=" + driver
+				+ ", engine=" + engine + "]";
+	}
+
 	public void start() {
 		System.out.println("Поехали ");
 	}
@@ -103,5 +157,9 @@ public class Car {
 		Engine engine = new Engine("BMW", 200);
 		Car car1 = new Car("BMW7", "Business", 2000, driver, engine);
 		car1.printInfo();
+		car1.turnLeft();
+		car1.turnRight();
+		car1.start();
+		car1.stop();
 	}
 }

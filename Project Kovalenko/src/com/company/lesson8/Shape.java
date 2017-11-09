@@ -11,14 +11,22 @@ package com.company.lesson8;
  *
  */
 abstract public class Shape {
-	protected String color;
+	private String color;
 
 	public Shape(String color) {
 		this.color = color;
 	}
 
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	abstract public void draw();
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,8 +52,13 @@ abstract public class Shape {
 		return true;
 	}
 
-	public static void main(String[] args) {
+	@Override
+	public String toString() {
+		return "Shape [color=" + color + ", getColor()=" + getColor() + ", hashCode()=" + hashCode() + ", getClass()="
+				+ getClass() + ", super.toString()=" + super.toString() + "]";
+	}
 
+	public static void main(String[] args) {
 		Shape[] shapes = new Shape[2];
 		shapes[0] = new CircleL8("Зеленый", 25);
 		shapes[1] = new RectangleL8("Желтый", 67, 44);

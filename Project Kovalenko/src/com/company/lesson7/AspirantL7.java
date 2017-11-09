@@ -1,7 +1,7 @@
 package com.company.lesson7;
 
 /**
- * Сщздан пример наследования, реализован класс Student и класс Aspirant,
+ * Создан пример наследования, реализован класс Student и класс Aspirant,
  * аспирант отличается от студента наличием некой научной работы. Создана
  * переменная типа Student, которая ссылается на объект типа Aspirant.
  * 
@@ -30,11 +30,43 @@ public class AspirantL7 extends StudentL7 {
 				+ "Научная работа на тему: " + work);
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((work == null) ? 0 : work.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AspirantL7 other = (AspirantL7) obj;
+		if (work == null) {
+			if (other.work != null)
+				return false;
+		} else if (!work.equals(other.work))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "AspirantL7 [work=" + work + ", getLastName()=" + getLastName() + ", getFirstName()=" + getFirstName()
+				+ ", getGroup()=" + getGroup() + ", super.toString()=" + super.toString() + "]";
+	}
+
 	public static void main(String[] args) {
 		AspirantL7 as1 = new AspirantL7("Иванов", "Василий", "java15", "Программирование на java");
 		AspirantL7 as2 = new AspirantL7("Васильев", "Петр", "java15", "Программирование на javaFX");
 		StudentL7 st = new AspirantL7("Петраков", "Иван", "java15", "Программирование на javaFX");
 		as1.aspirantCard();
 		as2.aspirantCard();
+		st.studentCard();
 	}
 }

@@ -11,4 +11,9 @@ public class Cravat extends Clothes implements ManClothing {
 		return "Галстук, размер " + getSize() + " (" + getSize().getDescription() + ")" + ", цвет - " + getColor()
 				+ ", цена - " + getCost();
 	}
+
+	@Override
+	public String toString() {
+		return "Cravat [super.toString()=" + super.toString() + "]";
+	}
 }

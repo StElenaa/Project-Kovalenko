@@ -13,7 +13,6 @@ public class Circle {
 	private double radius;
 
 	public Circle(double radius) {
-		super();
 		this.radius = radius;
 	}
 
@@ -30,7 +29,6 @@ public class Circle {
 	}
 
 	public double area() {
-
 		double area = radius * radius * PI;
 		return area;
 	}

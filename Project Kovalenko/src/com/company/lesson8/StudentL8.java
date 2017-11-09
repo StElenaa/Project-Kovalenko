@@ -1,7 +1,7 @@
 package com.company.lesson8;
 
 /**
- * Создаy метод getScholarship() для класса Student, который переопределен в
+ * Создан метод getScholarship() для класса Student, который переопределен в
  * классе Aspirant.
  * 
  * @author Elen
@@ -40,6 +40,48 @@ public class StudentL8 {
 
 	public void setGroup(String group) {
 		this.group = group;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((group == null) ? 0 : group.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StudentL8 other = (StudentL8) obj;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (group == null) {
+			if (other.group != null)
+				return false;
+		} else if (!group.equals(other.group))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "StudentL8 [lastName=" + lastName + ", firstName=" + firstName + ", group=" + group + "]";
 	}
 
 	public int getScholarship() {

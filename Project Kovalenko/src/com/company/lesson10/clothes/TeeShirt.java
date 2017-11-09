@@ -17,4 +17,9 @@ public class TeeShirt extends Clothes implements ManClothing, WomanClothing {
 		return "Мужская футболка, размер " + getSize() + " (" + getSize().getDescription() + ")" + ", цвет - "
 				+ getColor() + ", цена - " + getCost();
 	}
+
+	@Override
+	public String toString() {
+		return "TeeShirt [super.toString()=" + super.toString() + "]";
+	}
 }

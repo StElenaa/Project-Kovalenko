@@ -3,19 +3,25 @@ package com.company.lesson8;
 import java.util.Arrays;
 
 public class Bouquet {
-
-	Flower[] flowers;
+	private Flower[] flowers;
 
 	public Bouquet(Flower... flowers) {
-		super();
 		this.flowers = new Flower[flowers.length];
 		this.flowers = Arrays.copyOf(flowers, flowers.length);
+	}
+
+	public Flower[] getFlowers() {
+		return flowers;
+	}
+
+	public void setFlowers(Flower[] flowers) {
+		this.flowers = flowers;
 	}
 
 	public String getFlowerNames() {
 		String flowerNames = "";
 		for (Flower flower : flowers) {
-			flowerNames = flowerNames + flower.name + " ";
+			flowerNames = flowerNames + flower.getName() + " ";
 		}
 		return flowerNames;
 	}
@@ -26,6 +32,33 @@ public class Bouquet {
 			fullNumber = fullNumber + bouquet.flowers.length;
 		}
 		return fullNumber;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(flowers);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Bouquet other = (Bouquet) obj;
+		if (!Arrays.equals(flowers, other.flowers))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Bouquet [flowers=" + Arrays.toString(flowers) + "]";
 	}
 
 	public static void main(String[] args) {

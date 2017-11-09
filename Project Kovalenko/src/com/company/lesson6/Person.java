@@ -10,8 +10,8 @@ package com.company.lesson6;
  *
  */
 public class Person {
-	String fullName;
-	int age;
+	private String fullName;
+	private int age;
 
 	public Person(String fullName, int age) {
 		this();
@@ -38,12 +38,45 @@ public class Person {
 		this.age = age;
 	}
 
-	void move() {
+	public void move() {
 		System.out.println("Метод move() \n" + "fullName= " + fullName + "\n" + "age = " + age + "\n");
 	}
 
-	void talk() {
+	public void talk() {
 		System.out.println("Метод talk() \n" + "fullName= " + fullName + "\n" + "age = " + age);
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (age != other.age)
+			return false;
+		if (fullName == null) {
+			if (other.fullName != null)
+				return false;
+		} else if (!fullName.equals(other.fullName))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Person [fullName = %s age = %d]", fullName, age);
 	}
 
 	public static void main(String[] args) {
@@ -51,5 +84,7 @@ public class Person {
 		Person per2 = new Person();
 		per1.move();
 		per2.talk();
+		System.out.println(per1.toString());
+		System.out.println(per2.toString());
 	}
 }

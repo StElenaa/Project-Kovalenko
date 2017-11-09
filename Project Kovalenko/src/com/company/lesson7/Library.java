@@ -1,5 +1,7 @@
 package com.company.lesson7;
 
+import java.util.Arrays;
+
 /**
  * Kласс LibraryUser, хранит такую информацию о пользователе библиотеки: ФИО,
  * номер читательского билета, факультет, дата рождения, телефон. Методы
@@ -15,7 +17,6 @@ package com.company.lesson7;
  *
  */
 public class Library {
-
 	private LibraryUser[] users;
 	private Book[] books;
 
@@ -23,16 +24,23 @@ public class Library {
 	}
 
 	public Library(LibraryUser... users) {
-		super();
+		this.users = users;
+	}
+
+	public Book[] getBooks() {
+		return books;
+	}
+
+	public void setBooks(Book[] books) {
+		this.books = books;
+	}
+
+	public void setUsers(LibraryUser[] users) {
 		this.users = users;
 	}
 
 	public LibraryUser[] getUsers() {
 		return users;
-	}
-
-	public void setUsers(LibraryUser... users) {
-		this.users = users;
 	}
 
 	public void takeBook(int amount) {
@@ -75,6 +83,37 @@ public class Library {
 						+ user.getLibraryCard() + " Телефон - " + user.getPhone());
 			}
 		}
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(books);
+		result = prime * result + Arrays.hashCode(users);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Library other = (Library) obj;
+		if (!Arrays.equals(books, other.books))
+			return false;
+		if (!Arrays.equals(users, other.users))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Library [users=" + Arrays.toString(users) + ", books=" + Arrays.toString(books) + ", super.toString()="
+				+ super.toString() + "]";
 	}
 
 	public static void main(String[] args) {

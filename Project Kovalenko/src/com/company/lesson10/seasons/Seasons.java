@@ -22,9 +22,17 @@ public enum Seasons {
 		}
 	},
 	AUTUMN(10);
-	int temp;
+	private int temp;
 
-	private Seasons(int temp) {
+	Seasons(int temp) {
+		this.temp = temp;
+	}
+
+	public int getTemp() {
+		return temp;
+	}
+
+	public void setTemp(int temp) {
 		this.temp = temp;
 	}
 

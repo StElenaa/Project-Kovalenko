@@ -7,6 +7,12 @@ public class Orchids extends Flower {
 	}
 
 	@Override
+	public String toString() {
+		return "Orchids [getCost()=" + getCost() + ", getName()=" + getName() + ", getShelfLife()=" + getShelfLife()
+				+ "]";
+	}
+
+	@Override
 	public int getCost() {
 		return 50;
 	}

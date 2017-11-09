@@ -9,10 +9,26 @@ public class RectangleL8 extends Shape {
 		this.y1 = y1;
 	}
 
+	public int getX1() {
+		return x1;
+	}
+
+	public void setX1(int x1) {
+		this.x1 = x1;
+	}
+
+	public int getY1() {
+		return y1;
+	}
+
+	public void setY1(int y1) {
+		this.y1 = y1;
+	}
+
 	@Override
 	public void draw() {
 		System.out.println("Draw: Фигура - прямоугольник; " + "Координаты точек - " + "x1 = " + x1 + " y1 = " + y1);
-		System.out.println("Цвет - " + color);
+		System.out.println("Цвет - " + getColor());
 	}
 
 	@Override
@@ -38,6 +54,11 @@ public class RectangleL8 extends Shape {
 		if (y1 != other.y1)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "RectangleL8 [x1=" + x1 + ", y1=" + y1 + ", super.toString()=" + super.toString() + "]";
 	}
 
 	public static void main(String[] args) {
