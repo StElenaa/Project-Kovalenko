@@ -4,8 +4,7 @@ public class Report {
 
 	public static void generateReport(Employee[] emps) {
 		for (Employee employee : emps) {
-			System.out.println(
-					String.format("ФИО - %-15s зарплата - %9.2f", employee.getFullname(), employee.getSalary()));
+			System.out.println(String.format("ФИО - %-15s зарплата - %9.2f", employee.getFullname(), employee.getSalary()));
 		}
 	}
 

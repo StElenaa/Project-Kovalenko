@@ -2,9 +2,9 @@ package com.company.lesson9.printable;
 
 public interface Printable {
 
-	public void print();
+	void print();
 
-	public static void printMagazines(Printable[] printables) {
+	static void printMagazines(Printable[] printables) {
 		System.out.println("\n∆урналы:");
 		for (Printable printable : printables) {
 			if (printable instanceof Magazine) {
@@ -13,7 +13,7 @@ public interface Printable {
 		}
 	}
 
-	public static void printBooks(Printable[] printables) {
+	static void printBooks(Printable[] printables) {
 		System.out.println("\n ниги:");
 		for (Printable printable : printables) {
 			if (printable instanceof Book) {

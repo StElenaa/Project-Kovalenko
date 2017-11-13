@@ -1,5 +1,7 @@
 package com.company.lesson12;
 
+import java.util.Date;
+
 /**
  * Создан класс Employee, у которого есть переменные класса - fullname, salary.
  * Создан массив содержащий несколько объектов этого типа. Создан класс Report,
@@ -14,6 +16,7 @@ package com.company.lesson12;
 public class Employee {
 	private String fullname;
 	private float salary;
+	private Date salaryDate;
 
 	public Employee(String fullname, float salary) {
 		this.fullname = fullname;
@@ -34,6 +37,13 @@ public class Employee {
 
 	public void setSalary(float salary) {
 		this.salary = salary;
+	}
+	public Date getSalaryDate() {
+		return new Date();
+	}
+
+	public void setSalaryDate(Date salaryDate) {
+		this.salaryDate = salaryDate;
 	}
 
 	@Override
@@ -66,6 +76,6 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [fullname=" + fullname + ", salary=" + salary + "]";
+		return "Employee [fullname=" + fullname + ", salary=" + salary + ", salaryDate=" + salaryDate + "]";
 	}
 }

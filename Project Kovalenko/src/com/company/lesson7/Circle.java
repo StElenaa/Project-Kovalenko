@@ -1,5 +1,7 @@
 package com.company.lesson7;
 
+import javax.swing.text.MaskFormatter;
+
 /**
  * Класс Circle содержит переменную radius; методы, вычисляющие площадь и длину
  * окружности; константу PI.
@@ -29,8 +31,7 @@ public class Circle {
 	}
 
 	public double area() {
-		double area = radius * radius * PI;
-		return area;
+		return radius*radius * PI;
 	}
 
 	public void print() {
