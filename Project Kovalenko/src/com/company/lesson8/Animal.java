@@ -1,5 +1,7 @@
 package com.company.lesson8;
 
+import java.io.Serializable;
+
 /**
  * —оздан класс Animal и расшир€ющие его классы Dog, Cat, Horse.  ласс Animal,
  * содержит переменные food, location и методы makeNoise, eat, sleep. Dog, Cat,
@@ -13,7 +15,9 @@ package com.company.lesson8;
  * @author Elen
  *
  */
-public abstract class Animal {
+public abstract class Animal implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private String food;
 	private String location;
 

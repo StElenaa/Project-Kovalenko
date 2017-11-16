@@ -24,6 +24,6 @@ public class TopicsForJava {
 		s2 = new String(s2.getBytes("ISO-8859-1"), "UTF-8");
 		String s3 = rb.getString("theme3");
 		s3 = new String(s3.getBytes("ISO-8859-1"), "UTF-8");
-		System.out.println(s1+"\n"+s2+"\n"+s3);
-		}
+		System.out.println(s1 + "\n" + s2 + "\n" + s3);
 	}
+}

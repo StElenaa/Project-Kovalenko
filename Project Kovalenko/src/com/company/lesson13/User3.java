@@ -16,6 +16,9 @@ public class User3 {
 	}
 
 	public static void main(String[] args) {
+		Query query1 = new Query();
+		query1.printToLog();
+		System.out.println();
 		User3.createQuery();
 	}
 }
