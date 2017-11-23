@@ -8,11 +8,14 @@ package com.company.lesson12;
  *
  */
 public class ChangeTo {
+	static final String A = "object-oriented programming";
+	static final String B = "OOP";
+
 	public static String replacer(String s) {
 		String st = s;
-		int i = s.toLowerCase().indexOf("object-oriented programming");
+		int i = s.toLowerCase().indexOf(A);
 		if (i >= 0) {
-			st = s.substring(0, i) + "OOP" + s.substring(i + "object-oriented programming".length());
+			st = s.substring(0, i) + B + s.substring(i + A.length());
 			st = replacer(st);
 		}
 		return st;

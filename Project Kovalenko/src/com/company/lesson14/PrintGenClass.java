@@ -6,8 +6,7 @@ import com.company.lesson8.Cat;
 public class PrintGenClass {
 
 	public static void main(String[] args) {
-		GeneralizedClass<Integer, Animal, Integer> gcObj = new GeneralizedClass<Integer, Animal, Integer>(98,
-				new Cat("сметана", "центр"), 99);
+		GeneralizedClass<Integer, Animal, Integer> gcObj = new GeneralizedClass<>(98, new Cat("сметана", "центр"), 99);
 
 		gcObj.showTypes();
 

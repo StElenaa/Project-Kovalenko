@@ -1,6 +1,7 @@
 package com.company.lesson14;
 
 import java.util.Comparator;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -9,19 +10,11 @@ public class Catalog {
 		SortedSet<Product> sortByName = new TreeSet<>(new Comparator<Product>() {
 			@Override
 			public int compare(Product o1, Product o2) {
-				if (o1.getNameProduct().equals(o2.getNameProduct())) {
-					return 1;
-				}
 				return o1.getNameProduct().compareTo(o2.getNameProduct());
 			}
 		});
-		for (Category c : categories) {
-			sortByName.addAll(c.getSetOfProduct());
-		}
 		System.out.println("Товары отсортированы по именам:");
-		for (Product product : sortByName) {
-			System.out.println(product);
-		}
+		print(sortByName, categories);
 	}
 
 	public static void printByPrice(Category... categories) {
@@ -33,13 +26,8 @@ public class Catalog {
 				return p1 < p2 ? -1 : 1;
 			}
 		});
-		for (Category c : categories) {
-			sortByPrice.addAll(c.getSetOfProduct());
-		}
 		System.out.println("Товары отсортированы по цене:");
-		for (Product product : sortByPrice) {
-			System.out.println(product);
-		}
+		print(sortByPrice, categories);
 	}
 
 	public static void printByRating(Category... categories) {
@@ -52,11 +40,15 @@ public class Catalog {
 				return p1 < p2 ? -1 : 1;
 			}
 		});
-		for (Category c : categories) {
-			sortByRating.addAll(c.getSetOfProduct());
-		}
 		System.out.println("Товары отсортированы по рейтингу:");
-		for (Product product : sortByRating) {
+		print(sortByRating, categories);
+	}
+
+	private static void print(Set<Product> sorted, Category... categories) {
+		for (Category c : categories) {
+			sorted.addAll(c.getSetOfProduct());
+		}
+		for (Product product : sorted) {
 			System.out.println(product);
 		}
 	}

@@ -9,7 +9,7 @@ import java.util.List;
  * @author Elen
  *
  */
-public class DinMassiv extends HeavyBox {
+public class DinMassiv {
 	public static void main(String[] args) {
 		List<HeavyBox> boxes = new ArrayList<>();
 		boxes.add(new HeavyBox(1, 2, 3, 4));

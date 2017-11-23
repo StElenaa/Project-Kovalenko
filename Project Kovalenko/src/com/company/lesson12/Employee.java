@@ -38,6 +38,7 @@ public class Employee {
 	public void setSalary(float salary) {
 		this.salary = salary;
 	}
+
 	public Date getSalaryDate() {
 		return new Date();
 	}
@@ -52,6 +53,7 @@ public class Employee {
 		int result = 1;
 		result = prime * result + ((fullname == null) ? 0 : fullname.hashCode());
 		result = prime * result + Float.floatToIntBits(salary);
+		result = prime * result + ((salaryDate == null) ? 0 : salaryDate.hashCode());
 		return result;
 	}
 
@@ -70,6 +72,11 @@ public class Employee {
 		} else if (!fullname.equals(other.fullname))
 			return false;
 		if (Float.floatToIntBits(salary) != Float.floatToIntBits(other.salary))
+			return false;
+		if (salaryDate == null) {
+			if (other.salaryDate != null)
+				return false;
+		} else if (!salaryDate.equals(other.salaryDate))
 			return false;
 		return true;
 	}

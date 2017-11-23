@@ -1,6 +1,7 @@
 package com.company.lesson14;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * Создана очередь, содержащая объекты класса HeavyBox. Используется класс
@@ -13,7 +14,7 @@ import java.util.ArrayDeque;
 public class MyQueue {
 
 	public static void main(String[] args) {
-		ArrayDeque<HeavyBox> arrHeavy = new ArrayDeque<>();
+		Deque<HeavyBox> arrHeavy = new ArrayDeque<>();
 		HeavyBox hb1 = new HeavyBox(1, 2, 3, 4);
 		HeavyBox hb2 = new HeavyBox(5, 6, 7, 8);
 		HeavyBox hb3 = new HeavyBox(9, 10, 11, 12);
