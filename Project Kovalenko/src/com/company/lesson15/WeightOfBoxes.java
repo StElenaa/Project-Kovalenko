@@ -30,7 +30,7 @@ public class WeightOfBoxes {
 		List<HeavyBox> newList = new ArrayList<>();
 		Iterator<HeavyBox> iterator = boxes.iterator();
 		while (iterator.hasNext()) {
-			HeavyBox heavyBox = (HeavyBox) iterator.next();
+			HeavyBox heavyBox = iterator.next();
 			if (heavyBox.getWeight() > 300) {
 				iterator.remove();
 				newList.add(heavyBox);

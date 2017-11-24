@@ -28,14 +28,35 @@ public class ListStudents {
 
 		printStudents(students, 1);
 		printStudents(students, 2);
+		printStudents(students, 3);
+		System.out.println();
+		System.out.println("Перевод студентов:");
+		transfer(students);
+		System.out.println();
+		printStudents(students, 1);
+		printStudents(students, 2);
+		printStudents(students, 3);
+	}
+
+	private static void transfer(List<Student> students) {
+		Iterator<Student> iterator = students.iterator();
+		while (iterator.hasNext()) {
+			Student student = iterator.next();
+			if (student.averageRating() >= 3) {
+				System.out.println(student.toString() + " - переводится на " + (student.getCourse() + 1) + " курс");
+				student.setCourse(student.getCourse() + 1);
+			} else {
+				System.out.println(student.toString() + " - отчисляется");
+				iterator.remove();
+			}
+		}
 	}
 
 	private static void printStudents(List<Student> students, int course) {
-		Iterator<Student> iterator = students.iterator();
-		while (iterator.hasNext()) {
-			Student student = (Student) iterator.next();
+		System.out.println("Студенты " + course + " курса");
+		for (Student student : students) {
 			if (student.getCourse() == course) {
-				System.out.println(student.toString() + (student.averageRating() >= 3 ? " - переводится" : " - отчисляется"));
+				System.out.println(student.toString());
 			}
 		}
 	}

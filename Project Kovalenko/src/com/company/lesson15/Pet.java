@@ -12,25 +12,25 @@ import java.util.Map;
  *
  */
 public class Pet {
-	String namePet;
+	private String name;
 
-	public Pet(String namePet) {
-		this.namePet = namePet;
+	public Pet(String name) {
+		this.name = name;
 	}
 
-	public String getNamePet() {
-		return namePet;
+	public String getName() {
+		return name;
 	}
 
-	public void setNamePet(String namePet) {
-		this.namePet = namePet;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((namePet == null) ? 0 : namePet.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -43,17 +43,17 @@ public class Pet {
 		if (getClass() != obj.getClass())
 			return false;
 		Pet other = (Pet) obj;
-		if (namePet == null) {
-			if (other.namePet != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!namePet.equals(other.namePet))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Pet [namePet=" + namePet + "]";
+		return "Pet [name=" + name + "]";
 	}
 
 	public static void main(String[] args) {
@@ -61,9 +61,9 @@ public class Pet {
 		Pet cat = new Cat("Cat Murka");
 		Pet dog = new Dog("Dog Sharik");
 		Pet parrot = new Parrot("Parrot Roma");
-		petMap.put(cat.getNamePet(), cat);
-		petMap.put(dog.getNamePet(), dog);
-		petMap.put(parrot.getNamePet(), parrot);
+		petMap.put(cat.getName(), cat);
+		petMap.put(dog.getName(), dog);
+		petMap.put(parrot.getName(), parrot);
 		iterateKeys(petMap);
 	}
 
