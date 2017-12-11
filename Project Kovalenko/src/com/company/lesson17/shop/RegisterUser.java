@@ -4,9 +4,7 @@ public class RegisterUser {
 	public static void main(String[] args) {
 		try {
 			System.out.println(isCorrect("Ivanov", "ppppppppp", "ppppppppp"));
-		} catch (WrongLoginException e) {
-			e.printStackTrace();
-		} catch (WrongPasswordException e) {
+		} catch (WrongLoginException | WrongPasswordException e) {
 			e.printStackTrace();
 		}
 	}

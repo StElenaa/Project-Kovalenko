@@ -4,14 +4,13 @@ import java.io.*;
 
 public class SerializableHorse {
 
-	public static Horse serialize(Horse horse) {
+	public static void serialize(Horse horse) {
 		try (FileOutputStream fs = new FileOutputStream("src\\com\\company\\lesson18\\testSer.ser");
 				ObjectOutputStream os = new ObjectOutputStream(fs)) {
 			os.writeObject(horse);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return horse;
 	}
 
 	public static Horse deserialize() {

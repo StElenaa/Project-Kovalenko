@@ -43,10 +43,10 @@ public class ListStudents {
 		while (iterator.hasNext()) {
 			Student student = iterator.next();
 			if (student.averageRating() >= 3) {
-				System.out.println(student.toString() + " - переводится на " + (student.getCourse() + 1) + " курс");
+				System.out.println(student + " - переводится на " + (student.getCourse() + 1) + " курс");
 				student.setCourse(student.getCourse() + 1);
 			} else {
-				System.out.println(student.toString() + " - отчисляется");
+				System.out.println(student + " - отчисляется");
 				iterator.remove();
 			}
 		}
@@ -56,7 +56,7 @@ public class ListStudents {
 		System.out.println("Студенты " + course + " курса");
 		for (Student student : students) {
 			if (student.getCourse() == course) {
-				System.out.println(student.toString());
+				System.out.println(student);
 			}
 		}
 	}

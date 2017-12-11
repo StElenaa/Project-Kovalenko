@@ -5,19 +5,19 @@ import java.util.Set;
 
 public class Category {
 	private String nameCategory;
-	private Set<Product> setOfProduct;
+	private Set<Producer> setOfProduct;
 
 	public Category(String nameCategory) {
 		this.nameCategory = nameCategory;
 		this.setOfProduct = new HashSet<>();
 	}
 
-	public Category(String nameCategory, Set<Product> setOfProduct) {
+	public Category(String nameCategory, Set<Producer> setOfProduct) {
 		this.nameCategory = nameCategory;
 		this.setOfProduct = setOfProduct;
 	}
 
-	public void addProduct(Product p) {
+	public void addProduct(Producer p) {
 		setOfProduct.add(p);
 	}
 
@@ -29,11 +29,11 @@ public class Category {
 		this.nameCategory = nameCategory;
 	}
 
-	public Set<Product> getSetOfProduct() {
+	public Set<Producer> getSetOfProduct() {
 		return setOfProduct;
 	}
 
-	public void setSetOfProduct(Set<Product> setOfProduct) {
+	public void setSetOfProduct(Set<Producer> setOfProduct) {
 		this.setOfProduct = setOfProduct;
 	}
 

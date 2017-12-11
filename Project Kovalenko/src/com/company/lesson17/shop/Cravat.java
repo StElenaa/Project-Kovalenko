@@ -74,7 +74,7 @@ public class Cravat implements Product {
 				public int compare(Product o1, Product o2) {
 					int p1 = ((Cravat) o1).getSize();
 					int p2 = ((Cravat) o2).getSize();
-					return p1 == p2 ? 0 : p1 > p2 ? 1 : -1;
+					return p1 - p2;
 				}
 			};
 		} else {

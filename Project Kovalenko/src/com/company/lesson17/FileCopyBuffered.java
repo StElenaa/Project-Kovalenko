@@ -23,7 +23,6 @@ public class FileCopyBuffered {
 				bw.write(c);
 			}
 			bw.flush();
-			bw.close();
 		} catch (IOException e) {
 			System.out.print("Exception");
 		}

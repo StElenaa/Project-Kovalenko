@@ -10,12 +10,10 @@ public class FileInputOutputStreamDemo {
 			for (char cc : c) {
 				output.write(cc);
 			}
-			output.close();
 			int size = input.available();
 			for (int j = 0; j < size; j++) {
 				System.out.print((char) input.read() + " ");
 			}
-			input.close();
 		} catch (IOException e) {
 			System.out.print("Exception");
 		}

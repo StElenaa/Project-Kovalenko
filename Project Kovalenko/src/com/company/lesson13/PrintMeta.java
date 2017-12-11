@@ -13,7 +13,7 @@ import com.company.lesson12.Employee;
  *
  */
 public class PrintMeta {
-	public static void printMetaInfo(Class clazz) {
+	public static void printMetaInfo(Class<?> clazz) {
 		System.out.println("Class name - " + clazz.getName());
 		System.out.println("Is Array? " + clazz.isArray());
 		System.out.println("Is Interface? " + clazz.isInterface());

@@ -20,7 +20,7 @@ public class MyQueue<T> {
 			}
 		}
 		valueSet = false;
-		notify();
+		notifyAll();
 		return q.poll();
 	}
 
@@ -34,6 +34,6 @@ public class MyQueue<T> {
 		}
 		valueSet = true;
 		q.add(n);
-		notify();
+		notifyAll();
 	}
 }

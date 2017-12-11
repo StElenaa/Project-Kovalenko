@@ -3,10 +3,9 @@ package com.company.lesson18;
 import java.io.Serializable;
 
 public class Halter implements Serializable {
-	private String type;
 
-	public Halter() {
-	}
+	private static final long serialVersionUID = 1L;
+	private String type;
 
 	@Override
 	public int hashCode() {

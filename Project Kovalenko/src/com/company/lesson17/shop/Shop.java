@@ -82,8 +82,7 @@ public class Shop {
 	}
 
 	public void buyFromBag(User user) {
-		try {
-			PrintWriter pw = new PrintWriter(new FileWriter("src\\io\\report.txt"));
+		try (PrintWriter pw = new PrintWriter(new FileWriter("src\\io\\report.txt"))) {
 			pw.println("Корзина пользователя " + user.getLogin());
 			Catalog bag = user.getBag();
 			Map<Product, Integer> bagContent = bag.getProducts();
@@ -162,10 +161,10 @@ public class Shop {
 				return ((o1.getPrice() - o2.getPrice()) < 0 ? -1 : 1);
 			}
 		};
-		List<Product> l = cravats.getSorted(c);
-		List<Product> l1 = skirts.getSorted(c);
-		Product p = l.get(0);
-		Product p1 = l1.get(0);
+		List<Product> t = cravats.getSorted(c);
+		List<Product> t1 = skirts.getSorted(c);
+		Product p = t.get(0);
+		Product p1 = t1.get(0);
 		s.putInBag(user1, cravats.getName(), p, 1);
 		s.putInBag(user1, skirts.getName(), p1, 2);
 		Catalog bag = user1.getBag();
