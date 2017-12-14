@@ -1,7 +1,7 @@
 package com.company.lesson19;
 
 public class Producer implements Runnable {
-	MyQueue<Integer> myQueue;
+	private MyQueue<Integer> myQueue;
 
 	public Producer(MyQueue<Integer> myQueue) {
 		this.myQueue = myQueue;

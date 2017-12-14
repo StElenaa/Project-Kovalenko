@@ -5,35 +5,24 @@ import java.util.Queue;
 
 public class MyQueue<T> {
 	private Queue<T> q;
-	boolean valueSet = false;
 
 	public MyQueue() {
 		q = new LinkedList<>();
 	}
 
 	public synchronized T get() {
-		while (!valueSet) {
+		while (q.isEmpty()) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		valueSet = false;
-		notifyAll();
 		return q.poll();
 	}
 
 	public synchronized void put(T n) {
-		while (valueSet) {
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		valueSet = true;
-		q.add(n);
+		q.offer(n);
 		notifyAll();
 	}
 }
