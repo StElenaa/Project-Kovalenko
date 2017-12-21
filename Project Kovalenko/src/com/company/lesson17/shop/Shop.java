@@ -66,14 +66,8 @@ public class Shop {
 	}
 
 	public void registerUser(String login, String password, String confPassword) {
-		try {
-			RegisterUser.isCorrect(login, password, confPassword);
-			credentials.put(login, password);
-		} catch (WrongLoginException e) {
-			System.out.println(e.getMessage());
-		} catch (WrongPasswordException e) {
-			System.out.println(e.getMessage());
-		}
+		RegisterUser.isCorrect(login, password, confPassword);
+		credentials.put(login, password);
 	}
 
 	public void putInBag(User user, String catalog, Product p, int q) {
